@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+            gap: 20px;
+        }
+        img{
+            width: 300px;
+            height: 150px;
+        }
+        .hidden{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <select id="flags">
+        <option value="JOD">Jordan</option>
+        <option value="PAL">Palestine</option>
+        <option value="IRAQ">Iraq</option>
+    </select>
+    <img class="hidden flageImg jod" src="download.png" alt="">
+    <img class="hidden flageImg pal" src="download (1).png" alt="">
+    <img class="hidden flageImg iraq" src="download (2).png" alt="">
+
+
+    <script>
+        let flag = document.getElementById('flags');
+
+        let jod = document.querySelector(".jod");
+        let pal = document.querySelector(".pal");
+        let iraq = document.querySelector(".iraq");
+
+        let allFlags = document.querySelectorAll('.flageImg');
+
+        
+
+        flag.onchange = function(){
+
+            allFlags.forEach((value)=>{
+                value.classList.add('hidden')
+            })
+            
+            if(flag.value=='JOD'){
+                jod.classList.remove('hidden')
+            }
+            if(flag.value=='PAL'){
+                pal.classList.remove('hidden')
+            }
+            if(flag.value=='IRAQ'){
+                iraq.classList.remove('hidden')
+            }
+        }
+    </script>
+</body>
+</html>

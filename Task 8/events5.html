@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+            gap: 20px;
+        }
+        .options{
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 500px;
+        }
+        textarea{
+            font-size: 12px;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="options">
+        <select class="font-family">
+            <option value="Arial, Helvetica, sans-serif">Arial</option>
+            <option value="fantasy">fantasy</option>
+            <option value="cursive">cursive</option>
+        </select>
+
+        <select class="font-size">
+            <option value="12px">12px</option>
+            <option value="16px">16px</option>
+            <option value="20px">20px</option>
+        </select>
+
+        <div>
+            <input type="checkbox" id="italic" class="italic"> 
+            <label for="italic">Italic</label>
+        </div>
+        <div>
+            <input type="checkbox" id="bold" class="bold"> 
+            <label for="bold">Bold</label>
+        </div>
+        <div>
+            <input type="checkbox" id="underline" class="underline"> 
+            <label for="underline">Underline</label>
+        </div>
+    </div>
+    <textarea name="" id="textarea" cols="50" rows="10" >
+        hello Everyone ! :)
+    </textarea>
+
+    <script>
+        let textarea = document.getElementById('textarea');
+
+        let fontFamilyy = document.querySelector('.font-family');
+        let fontSizee = document.querySelector('.font-size');
+        let italic = document.querySelector('.italic');
+        let bold = document.querySelector('.bold');
+        let underline = document.querySelector('.underline');
+
+        // fontFamily
+        fontFamilyy.onchange = function(){
+            textarea.style.fontFamily = fontFamilyy.value;
+        }
+
+        // fontSize 
+        fontSizee.onchange = function(){
+            textarea.style.fontSize = fontSizee.value;
+        }
+
+        // italic
+        italic.onchange = function(){
+            textarea.style.fontStyle = italic.checked ? 'italic' : 'normal'
+        }
+
+        // bold
+        bold.onchange = function(){
+            textarea.style.fontWeight = bold.checked ? 'bold' : 'normal'
+        }
+
+        // underline
+        underline.onchange = function(){
+            textarea.style.textDecoration = underline.checked ? 'underline' : 'none'
+        }
+
+
+    </script>
+</body>
+</html>

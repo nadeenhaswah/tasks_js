@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+            gap: 20px;
+        }
+        .container{
+            width: 350px;
+            height: auto;
+            border: 1px solid #000;
+        }
+        .container .headDiv{
+            width: 100%;
+            background-color: #c4c4c4;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        span{
+            color: blue;
+            cursor: pointer;
+        }
+        .container .bodyDiv{
+            width: 100%;
+            padding: 10px;
+            transition: 2s;
+        }
+        .hidden{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="headDiv">
+            <h2>Lorem ipsum dolor sit. </h2>
+            <span class="show">show</span>
+        </div>
+        <div class="bodyDiv hidden">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem voluptates, veritatis quaerat officia voluptas quam consequatur libero?</p>
+            <span class="hide">Hide</span>
+        </div>        
+    </div>
+    <div class="container">
+        <div class="headDiv">
+            <h2>Lorem ipsum dolor sit. </h2>
+            <span class="show">show</span>
+        </div>
+        <div class="bodyDiv hidden">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem voluptates, veritatis quaerat officia voluptas quam consequatur libero?</p>
+            <span class="hide">Hide</span>
+        </div>        
+    </div>
+    <div class="container">
+        <div class="headDiv">
+            <h2>Lorem ipsum dolor sit. </h2>
+            <span class="show">show</span>
+        </div>
+        <div class="bodyDiv hidden">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem voluptates, veritatis quaerat officia voluptas quam consequatur libero?</p>
+            <span class="hide">Hide</span>
+        </div>        
+    </div>
+    
+
+    <script>
+
+        let show = document.querySelectorAll('.show');
+        let hide = document.querySelectorAll('.hide');
+
+        let bodyDiv = document.querySelectorAll('.bodyDiv');
+
+        console.log(bodyDiv);
+
+        for(let i=0 ; i < bodyDiv.length ; i++){
+
+            
+
+            hide[i].onclick = function(){
+                bodyDiv[i].classList.add('hidden')
+            }
+            show[i].onclick = function(){
+                colseAll();
+                bodyDiv[i].classList.remove('hidden')
+            }
+        }
+
+        function colseAll(){
+            for(let i = 0  ; i<bodyDiv.length ; i++){
+                bodyDiv[i].classList.add('hidden');
+            }
+        }        
+    </script>
+</body>
+</html>

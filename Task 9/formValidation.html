@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- css  -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>form Validation</title>
+</head>
+<body>
+    
+    <form id="register">
+        <div class="pic">
+            <i class="fa-solid fa-circle-user"></i>
+        </div>
+        <div>
+            <input type="text" placeholder="First Name" class="fname">
+            <input type="text" placeholder="Last Name" class="lname">
+        </div>
+        <p class="errName err hidden"></p>
+
+        <input type="date" placeholder="Birth Date" class="BD">
+        <p class="errBD err hidden"></p>
+
+        <input type="email" placeholder="Email" class="email">
+        <p class="errEmail err hidden"></p>
+
+        <input type="email" placeholder="Confirm Email" class="coEmail">
+        <p class="errEmailCo err hidden"></p>
+
+        <input type="password" placeholder="Password" class="password">
+        <p class="errPass err hidden"></p>
+
+        <input type="password" placeholder="Confirm Password" class="coPassword">
+        <p class="errPassCo err hidden"></p>
+
+        <input type="text" placeholder="Mobile Number" class="mobile">
+        <p class="errMobile err hidden"></p>
+
+        <div class="submitBtn"> 
+            <input type="submit" value="Submit" class="submit">
+        </div>
+    </form>
+
+    <!-- js -->
+    <script src="js/main.js"></script>
+</body>
+</html>

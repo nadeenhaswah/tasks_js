@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+            gap: 20px;
+        }
+        form{
+            display: flex;
+            align-items: start;
+            justify-content: center;
+            flex-direction: column;
+            gap: 10px;
+        }
+        form div{
+            /* display: flex; */
+            align-items: center;
+            justify-content:space-between;
+            gap: 10px;
+        }
+        input{
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <form>
+        <div>
+            <label for="pass"><b>Password : </b> (min 6 characters)</label>
+            <div>
+                <input type="password" id="pass" class="pass">
+                <span class="passMsg"></span>
+            </div>
+        </div>
+        <div>
+            <label for="rePass"><b>Repeat :</b> </label>
+            <div>
+                <input type="password" id="rePass" class="rePass">
+                <span class="repassMsg"></span>
+            </div>
+        </div>
+        <br>
+        <input type="submit" value="submit">
+    </form>
+
+    <script>
+        let password = document.querySelector(".pass");
+        let rePassword = document.querySelector(".rePass");
+
+        let passMsg = document.querySelector('.passMsg');
+        let repassMsg = document.querySelector('.repassMsg');
+
+
+        password.onkeyup = function(){
+            if(password.value.length < 6){
+                passMsg.innerHTML="To short";
+                passMsg.style.color = 'red';
+                password.style.border='2px solid red'
+                
+            }
+            if(password.value.length >= 6){
+                passMsg.innerHTML=" ";
+                password.style.border='2px solid green'
+            }
+        }
+        rePassword.onkeyup = function (){
+            if(rePassword.value != password.value){
+                repassMsg.innerHTML="The Passwords doesn't match";
+                repassMsg.style.color= 'red'
+                rePassword.style.border='2px solid red'
+            }
+            if(rePassword.value == password.value){
+                repassMsg.innerHTML=" ";
+                rePassword.style.border='2px solid green'
+            }
+        }
+    </script>
+</body>
+</html>

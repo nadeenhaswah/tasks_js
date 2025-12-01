@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+            gap: 10px;
+        }
+        div.toAnimate{
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: peru;
+        }
+        @keyframes toSqure{
+            form{
+                border-radius: 50%;
+                background-color: peru;
+                width: 150px;
+            }
+            to{
+                border-radius: 0%;
+                background-color: chartreuse;
+                width: 250px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div>
+        <label >Enter duration in seconds</label>
+        <input type="number" class="time">
+    </div>
+    <div class="toAnimate "></div>
+    <button class="start">Start</button>
+
+    <script>
+        let startBtn =document.querySelector('.start');
+        let animationDiv= document.querySelector('.toAnimate');
+        let time = document.querySelector('.time');
+
+
+        startBtn.onclick = function(){
+            let t = `${time.value}s`
+            // animationDiv.classList.add('animation');
+            animationDiv.style.animation = `toSqure ${t} ease-in-out`;
+        }
+    </script>
+</body>  
+</html>
