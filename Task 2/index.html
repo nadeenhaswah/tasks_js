@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2 " String "</title>
+</head>
+<body>
+    
+
+
+    <script>
+        let fullName = "   Nadeen Abdel Rahman Khaled Haswah   ";
+
+        // trim()
+        console.log(fullName.trim());
+        // Removes spaces from both sides.
+
+        // trimStart()
+        console.log(fullName.trimStart());
+        // Removes spaces only from the left.
+
+        // trimEnd()
+        console.log(fullName.trimEnd());
+        // Removes spaces only from the right.
+
+        // padStart()
+        console.log("Nadeen".padStart(12, "*"));
+        // Adds characters to the left until it reaches the given length.
+
+        // padEnd()
+        console.log("Nadeen".padEnd(12, "*"));
+        // Adds characters to the right.
+
+        // charAt()
+        console.log(fullName.charAt(5));
+        // Returns the character at a specific index.
+
+        // charCodeAt()
+        console.log(fullName.charCodeAt(4));
+        // Returns ASCII/Unicode code of the character.
+
+        // split()
+        console.log(fullName.trim().split(" "));
+        // Splits string into an array based on a separator.
+
+        // length
+        console.log(fullName.length);
+        // Returns number of characters including spaces.
+
+        // slice()
+        console.log(fullName.slice(3, 10));
+        // Extracts part using start & end (supports negative indexes).
+
+        // substring()
+        console.log(fullName.substring(3, 10));
+        // Extracts part but does NOT support negative indexes.
+
+        // substr()
+        console.log(fullName.substr(3, 5));
+        // Extracts from start index and takes X characters.
+
+        // replace()
+        console.log(fullName.replace("Nadeen", "Nado"));
+        // Replaces only the first match.
+
+        // replaceAll()
+        console.log(fullName.replaceAll("a", "*"));
+        // Replaces all matches.
+
+        // toUpperCase()
+        console.log(fullName.toUpperCase());
+        // Converts all characters to capital letters.
+
+        // toLowerCase()
+        console.log(fullName.toLowerCase());
+        // Converts all characters to small letters.
+
+        // concat()
+        console.log("Hello ".concat(fullName.trim()));
+        // Joins multiple strings together.
+
+        // indexOf()
+        console.log(fullName.indexOf("a"));
+        // Returns first occurrence position.
+
+        // lastIndexOf()
+        console.log(fullName.lastIndexOf("a"));
+        // Returns last occurrence position.
+
+        // search()
+        console.log(fullName.search("Rahman"));
+        // Searches for a word or pattern inside the string.
+
+        // match() with g
+        console.log(fullName.match(/a/g));
+        // Returns array of all matches .
+
+        // match() without g
+        console.log(fullName.match(/a/));
+        // Returns the first match .
+
+        // matchAll()
+        console.log([...fullName.matchAll(/a/g)]);
+        // Returns iterator with detailed match info.
+
+        // includes()
+        console.log(fullName.includes("Rahman"));
+        // Checks if substring exists (true/false).
+
+        // startsWith()
+        console.log(fullName.trim().startsWith("Nadeen"));
+        // Checks if string starts with given value.
+
+        // endsWith()
+        console.log(fullName.trim().endsWith("Haswah"));
+        // Checks if string ends with given value
+
+    </script>
+</body>
+</html>

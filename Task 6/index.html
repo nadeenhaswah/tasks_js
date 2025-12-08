@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="ready">
+
+    </div>
+    <script>
+        //double numbers
+        // 1.
+        function doubleNumbers(arr){
+            let doubled = arr.map((value)=>{
+                return value*2
+            })
+            console.log(`The numbers after doubling them : ${doubled}`)
+        }
+
+        let arr = [2 , 4 , 100];
+        doubleNumbers(arr);
+
+        // --------------------------------------------
+
+        //convert number to srting
+        // 2.
+
+        function stringItUp(arr){
+            let stringNumbers =arr.map((value)=>{
+                return value.toString();
+            });
+
+            console.log(`Sting Numbers :  ${stringNumbers}`)
+            console.log(stringNumbers)
+        }
+
+        let arr2 =[1,5,7]
+        stringItUp(arr2)
+
+        // --------------------------------------------
+        // capitalizeNames
+        // 3.
+
+        function capitalizeNames(arr){
+            let names = arr.map((value)=>{
+                return value.charAt(0).toUpperCase() + value.slice(1);
+            })
+
+            console.log(names);
+        }
+        let names =['nadeen' , 'omer', 'remas','noor'];
+        capitalizeNames(names);
+
+        // --------------------------------------------
+        // namesOnly
+        // 4.
+
+        function namesOnly(arr){
+            let name =arr.map((value)=>{
+                return value.name;
+            })
+            console.log(name)
+        }
+
+        let onlyName=[
+            {
+                name : "Nadeen Haswah",
+                age : 23
+            },
+            {
+                name : "Rama Haswah",
+                age : 20
+            },
+            {
+                name : "Noor Haswah",
+                age : 30
+            },
+        ]
+        namesOnly(onlyName);
+
+
+        // --------------------------------------------
+        // canGo
+        // 5.
+
+        function makeStrings(arr){
+            let canGo = arr.map((value)=>{
+                if(value.age<30){
+                    return ` ${value.name} is under age!!`;
+                }
+                else{
+                    return `${value.name} can go to The Matrix`;
+                }
+            })
+            console.log(canGo);
+        }
+
+        let list =[
+            {
+                name : 'Ramzi',
+                age : 30
+            },
+            {
+                name : 'Omer',
+                age : 27
+            },
+            {
+                name : 'Mohammed',
+                age : 35
+            },
+            {
+                name : 'Rami',
+                age : 26
+            },
+            {
+                name : 'Tareq',
+                age : 40
+            },
+        ]
+        makeStrings(list);
+
+        // --------------------------------------------
+        // readyToPutInTheDOM
+        // 6.
+        
+        let readyToPrint = document.querySelector('.ready');
+        function readyToPutInTheDOM(arr){
+            let HowIsReady = arr.map((value)=>{
+                return `<h1>${value.name}</h1> <h2>${value.age}</h2>`
+            })
+            readyToPrint.innerHTML=HowIsReady;
+            console.log(HowIsReady);
+        }
+        readyToPutInTheDOM(list);
+
+        // --------------------------------------------
+        // doubleValues
+        // 7.
+
+        function doubleValues(arr){
+            let doubled = arr.map((value)=>{
+                return value*2;
+            })
+            console.log(doubled);
+        }
+        doubleValues([2,5,3]);
+        doubleValues([-2,-5,-3]);
+
+        // --------------------------------------------
+        // valTimesIndex
+        // 8.
+
+        function valTimesIndex(arr){
+            let resutl = arr.map((value,index)=>{
+                return value*index;
+            })
+            console.log(resutl);
+        }
+        valTimesIndex([1,2,3])
+        valTimesIndex([1,-2,-3])
+
+        // --------------------------------------------
+        // extractKey
+        // 9.
+
+        function extractKey(arr){
+            let keys = arr.map((value)=>{
+                return value.name ;
+            })
+            console.log(keys);
+        }
+
+        let ourNames =[
+            {name : "Nadeen"},
+            {name : "Rama"},
+            {name : "Noor"},
+            {name : "Remas"},
+            {name : "Masa"},
+        ]
+        extractKey(ourNames);
+
+
+        // --------------------------------------------
+        // extractFullName
+        // 10.
+
+        function extractFullName(arr){
+            let fullName = arr.map((value)=>{
+                return value.first +" "+ value.last ;
+            })
+            console.log(fullName);
+        }
+        let ourFullNames =[
+            {first : "Nadeen" , last : "Haswah"},
+            {first : "Rama"   , last : "Haswah"},
+            {first : "Noor"   , last : "Haswah"},
+            {first : "Remas"  , last : "Haswah"},
+            {first : "Masa"   , last : "Haswah"},
+        ]
+        extractFullName(ourFullNames)
+    </script>
+</body>
+</html>

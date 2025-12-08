@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forEach</title>
+</head>
+<body>
+    
+    <script>
+        // doubleValues
+        // 1.
+        // let doubleValue=[];
+        function doubleValues(arr ){
+            let doubleValue =[]
+            arr.forEach((value)=>{
+                doubleValue.push(value*2) ;
+            })
+            console.log(doubleValue);
+        }
+        doubleValues([2,3,4]);
+        doubleValues([5,1,2,3,10]);
+
+        // --------------------------------------------
+        // onlyEvenValues
+        // 2.
+
+        function onlyEvenValues(arr){
+            let onlyEvenValue = [];
+            arr.forEach((value)=>{
+                if(value%2==0){
+                    onlyEvenValue.push(value)
+                }
+            })
+            console.log(onlyEvenValue);
+        }
+
+        onlyEvenValues([1,2,3])
+        onlyEvenValues([5,1,2,3,10])
+
+        // --------------------------------------------
+        // showFirstAndLast
+        // 3.
+
+    function showFirstAndLast(arr){
+        let firstLast=[];
+        arr.forEach((value)=>{
+            firstLast.push(value.charAt(0) + value.charAt(value.length-1));
+        })
+        console.log(firstLast)
+    }
+    showFirstAndLast(["nadeen","rama","remas","Qais"]);
+
+    // --------------------------------------------
+    // addKeyAndValue
+    // 4.
+
+    function addKeyAndValue(arr){
+        arr.forEach((value)=>{
+            value.title='instructor';
+        })
+        console.log(arr)
+    }
+    addKeyAndValue([
+        {name :'nadeen'},
+        {name :'rama'},
+        {name :'noor'},
+    ])
+
+    // --------------------------------------------
+    // vowelCount
+    // 5.
+
+    function vowelCount(str){
+        counterA=0;
+        counterO=0;
+        counterE=0;
+        counterU=0;
+        counterI=0;
+        vowels={}
+        for(let i=0 ;i<=str.length-1 ;i++){
+
+            if (str[i] == "a") {
+                ++counterA;
+                vowels.a=counterA;
+            } 
+            if (str[i] == "o") {
+                ++counterO;
+                vowels.o=counterO;
+            } 
+            if (str[i] == "e") {
+                ++counterE;
+                vowels.e=counterE;
+            } 
+            if (str[i] == "u") {
+                ++counterU;
+                vowels.u=counterU;
+            } 
+            if (str[i] == "i") {
+                ++counterI;
+                vowels.i=counterI;
+            }
+        }
+        console.log(vowels)
+    }
+    vowelCount("aaa");
+    vowelCount("nadeen");
+    vowelCount('Elie') // {e:2,i:1};
+    vowelCount('Tim') // {i:1};
+    vowelCount('Matt') // {a:1}
+    vowelCount('hmmm') // {};
+    vowelCount('I Am awesome and so are you') // {i: 1, a: 4, e: 3, o: 3, u: 1};
+    </script>
+</body>
+</html>
